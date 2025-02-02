@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Search Section -->
+<section id="search-section" class="flex flex-col items-center justify-center max-h-screen transition-all duration-500">
+    <!-- Title -->
+    <h2 id="main-title" class="text-5xl font-bold mb-8 text-center">
+        Search Smarter, Not harder
+    </h2>
+    <p id="sub-title" class="text-gray-400 text-lg mb-8 text-center">
+        Ask anything and get answers instantly.
+    </p>
+    <!-- Search Bar -->
+    <form 
+        id="search-form" 
+        class="relative flex items-center w-full max-w-4xl px-4"
+        onsubmit="performSearch(event)"
+    >
+        <input 
+            id="query-input"
+            type="text" 
+            name="query" 
+            placeholder="Ask me anything..." 
+            class="w-full bg-black border border-gray-700 text-white px-6 py-4 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500 transition"
+            required
+        />
+        <button 
+            type="submit"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-300 transition"
+        >
+            <!-- Search Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="5 1 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10l2-2m0 00-0-2m2 2l2-2m-2 2l2 2m10 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
+    </form>
+</section>
+
+<!-- Results Section -->
+<section id="results-section" class="hidden py-12">
+    <div class="max-w-4xl mx-auto px-6">
+        <!-- Response -->
+        <div id="response" class="text-white text-lg font-medium mb-6"></div>
+        <!-- Sources -->
+        <div id="sources" class="space-y-4"></div>
+    </div>
+</section>
+<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+{% endblock %}

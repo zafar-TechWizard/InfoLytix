@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-center mt-16">
+    <!-- Hero Section -->
+    <div class="p-10 rounded-lg shadow-lg bg-gray-900">
+        <h2 class="text-4xl font-extrabold mb-4">About AI Search Assistant</h2>
+        <p class="text-gray-400 text-lg mb-6">
+            A smarter way to find answers using AI.
+        </p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="mt-16">
+    <h3 class="text-2xl font-semibold text-gray-300 mb-4">Features</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold text-white mb-2">Fast Search</h4>
+            <p class="text-gray-400">Get instant, reliable answers to your questions in seconds.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold text-white mb-2">AI-Powered</h4>
+            <p class="text-gray-400">Leveraging AI to provide the most accurate responses.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold text-white mb-2">Simple Interface</h4>
+            <p class="text-gray-400">A clean, user-friendly interface designed for ease of use.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="mt-16">
+    <h3 class="text-2xl font-semibold text-gray-300 mb-4">How It Works</h3>
+    <p class="text-gray-400 mb-6">
+        Our AI Search Assistant uses advanced natural language processing (NLP) to understand and answer your queries. Simply enter a question, and let the AI provide relevant responses within seconds.
+    </p>
+</section>
+
+<!-- Contact Section -->
+<section class="mt-16">
+    <h3 class="text-2xl font-semibold text-gray-300 mb-4">Get In Touch</h3>
+    <p class="text-gray-400 mb-6">
+        If you have any questions or feedback, feel free to <a href="mailto:support@aisearch.com" class="text-purple-600 hover:text-purple-400">contact us</a>.
+    </p>
+</section>
+{% endblock %}

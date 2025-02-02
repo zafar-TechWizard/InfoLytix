@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-center mt-16">
+    <!-- Hero Section -->
+    <div class="p-10 rounded-lg shadow-lg bg-gray-900">
+        <h2 class="text-4xl font-extrabold mb-4">We Value Your Feedback</h2>
+        <p class="text-gray-400 text-lg mb-6">
+            Help us improve! Share your thoughts and suggestions.
+        </p>
+    </div>
+</section>
+
+<!-- Feedback Form Section -->
+<section class="mt-16">
+    <div class="max-w-lg mx-auto p-8 bg-gray-800 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-white mb-4">Submit Your Feedback</h3>
+        <form action="/submit-feedback" method="POST" class="space-y-6">
+            <div>
+                <label for="name" class="text-sm text-gray-400">Name</label>
+                <input type="text" name="name" id="name" placeholder="Your Name" class="w-full bg-transparent border border-gray-700 text-white placeholder-gray-500 focus:outline-none px-4 py-2 rounded-md">
+            </div>
+
+            <div>
+                <label for="email" class="text-sm text-gray-400">Email</label>
+                <input type="email" name="email" id="email" placeholder="Your Email" class="w-full bg-transparent border border-gray-700 text-white placeholder-gray-500 focus:outline-none px-4 py-2 rounded-md">
+            </div>
+
+            <div>
+                <label for="feedback" class="text-sm text-gray-400">Feedback</label>
+                <textarea name="feedback" id="feedback" placeholder="Your Feedback" rows="5" class="w-full bg-transparent border border-gray-700 text-white placeholder-gray-500 focus:outline-none px-4 py-2 rounded-md"></textarea>
+            </div>
+
+            <button type="submit" class="bg-purple-600 hover:bg-purple-500 text-white py-2 px-6 rounded-md transition">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
