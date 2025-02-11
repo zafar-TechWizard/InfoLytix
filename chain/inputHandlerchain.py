@@ -12,11 +12,19 @@ client = Groq(api_key='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'
 
 
 convo_history = []
+MAX_CONTEXT_LENGTH = 5
+
+def trim_conversation_history():
+    global convo_history
+    if len(convo_history) > MAX_CONTEXT_LENGTH * 2:
+        convo_history = convo_history[-(MAX_CONTEXT_LENGTH * 2):]
 
 
 def Questionafy(query):
     global convo_history
     sys_msg = webPrompt.webPrompt
+
+    trim_conversation_history()
 
     query_msg = f"""Anything below is the part of the actual conversation and you need to use conversation and the follow-up question to rephrase the follow-up question as a standalone question based on the guidelines shared above.
     "conversation": {convo_history if convo_history else "No conversation history yet"}
@@ -38,15 +46,10 @@ def Questionafy(query):
     convo_history.append({'role': 'user', 'content': query})
     convo_history.append({'role': 'assistant', 'content': response})
 
+    if 'Rephrased question:' in response:
+        response = response.replace('Rephrased question:', '')
+    
+        
+
     return response
 
-# if __name__=='__main__':
-#     while True:
-#         user = input("YOU: ")
-#         q=[]
-#         res = Questionafy(user)
-#         convo_history.append({"role": "user", "content": user})
-#         convo_history.append({"role": "assistant", "content": res})
-#         for i in res.get('rephrased_question')['question']:
-#             q.append(i)
-#             print(q)

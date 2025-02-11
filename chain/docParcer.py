@@ -67,14 +67,14 @@ def process_pdf(file_path):
 
 
 # Example Usage
-if __name__ == "__main__":
-    # Path to your local PDF file
-    pdf_file = "temp.pdf"  # Replace with the path to your PDF file
-    documents = process_pdf(pdf_file)
+# if __name__ == "__main__":
+#     # Path to your local PDF file
+#     pdf_file = "temp.pdf"  # Replace with the path to your PDF file
+#     documents = process_pdf(pdf_file)
 
-    # Display chunked content
-    if documents:
-        for idx, doc in enumerate(documents, 1):
-            print(f"Chunk {idx}:\n{doc.page_content}\n")
-    else:
-        print("No content extracted from the PDF.")
+#     # Display chunked content
+#     if documents:
+#         for idx, doc in enumerate(documents, 1):
+#             print(f"Chunk {idx}:\n{doc.page_content}\n")
+#     else:
+#         print("No content extracted from the PDF.")

@@ -43,7 +43,6 @@ async function performSearch(event) {
         responseDiv.innerHTML = data.response.replace(/\n/g, "<br>") // Replace new lines with <br>
             .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold text
             .replace(/```([\s\S]*?)```/g, "<pre><cmd>$1</cmd></pre>"); // Code blocks
-
         // Clear previous sources
         sourcesDiv.innerHTML = '';
 

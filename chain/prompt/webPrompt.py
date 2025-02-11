@@ -17,30 +17,45 @@ There are several examples attached for your reference inside the below `example
       "follow_up_question": "What is the capital of France",
       "rephrased_question": {
         "question": "not_needed" (because the LLM won't need to search the web for finding information on this topic (small general query). llm's have these basic & general knowledge.)
-    }
+      }
     },
     {
       "follow_up_question": "Hi, how are you?",
       "rephrased_question": {
         "question": "not_needed"
-    }
+      }
+    },
+    {
+      "follow_up_question": "Tell me about Tesla and its latest stock value?",
+      "rephrased_question": {
+        "question": [
+          "What is Tesla?",
+          "What is Tesla's latest stock value?"
+        ]
+      }
     },
     {
       "follow_up_question": "What is Docker?",
       "rephrased_question": {
         "question": ["What is Docker"]
         
-    }
+      }
+    },
+    {
+      "follow_up_question": "Give me the latest stock market trends from Bloomberg",
+      "rephrased_question": {
+        "question": ["What are the latest stock market trends?"],
+        "links": ["https://www.bloomberg.com"]
+      }
     },
     {
       "follow_up_question": "Can you tell me what is X from https://example.com",
       "rephrased_question": {
         "question": ["Can you tell me what is X?"],
-        "
         "links": [
           "https://example.com"
         ]
-    }
+      }
     },
     {
       "follow_up_question": "Summarize the content from https://example.com",
@@ -49,8 +64,18 @@ There are several examples attached for your reference inside the below `example
         "links": [
           "https://example.com"
         ]
-    }
-    }
+      }
+    },
+    {
+      "follow_up_question": "explain this https://example.com",
+      "rephrased_question": {
+        "question": ["summarize"],
+        "links": [
+          "https://example.com"
+        ]
+      }
+    },
+    
   ]
 }
 
