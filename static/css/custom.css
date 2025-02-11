@@ -29,9 +29,10 @@ strong {
     font-size: 1.6rem;
 }
 
-#response pre {
-    margin-left: 0px; /* Adjust space from left */
-    padding-left: 10px; /* Optional: Inner space */
+#response pre {    
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background: #2e2e2e;
