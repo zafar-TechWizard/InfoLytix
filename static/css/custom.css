@@ -23,6 +23,27 @@ header {
     
 }
 
+strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1500;
+    font-size: 1.6rem;
+}
+
+#response pre {
+    margin-left: 0px; /* Adjust space from left */
+    padding-left: 10px; /* Optional: Inner space */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #2e2e2e;
+    overflow: auto;
+}
+
+cmd {
+    scroll-behavior: smooth;
+    font-size: smaller;
+    display: block;
+}
+
 #main-title {
     font-family: 'CustomFont';
 
@@ -53,6 +74,9 @@ body {
     background-color: #000000;
     color: white;
 }
+
+
+
 
 /* Headings */
 h2, h3 {
@@ -148,10 +172,11 @@ div {
 
 #response {
     /* font-family: 'Response', sans-serif; */
-    font-size: 1.2rem; 
+    font-size: 1rem; 
     font-family: 'Response';
-    line-height: 27px;
-    word-spacing: 1.5px;
+    line-height: 23px;
+    word-spacing: 0.4px;
+    text-align: justify;
     
 
 }
