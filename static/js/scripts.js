@@ -74,8 +74,6 @@ if (!searchForm.dataset.listenerAttached) {
     // Ensure form doesn't trigger multiple times
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        if (searchForm.dataset.submitted) return; // Prevent duplicate requests
-        searchForm.dataset.submitted = true; // Mark as submitted
         performSearch(event);
     });
 
