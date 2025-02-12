@@ -1,50 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Search Section -->
-<section id="search-section" class="flex flex-col items-center justify-center max-h-screen transition-all duration-500">
-    <!-- Title -->
-    <h2 id="main-title" class="text-5xl font-bold mb-8 text-center">
-        Search Smarter, Not harder
+<section id="search-section" class="flex flex-col items-center justify-center max-h-screen transition-all duration-500 px-4">
+    <h2 id="main-title" class="text-5xl font-bold mb-6 text-center">
+        Search Smarter, Not Harder
     </h2>
-    <p id="sub-title" class="text-gray-400 text-lg mb-8 text-center">
+    <p id="sub-title" class="text-gray-400 text-lg mb-10 text-center">
         Ask anything and get answers instantly.
     </p>
-    <!-- Search Bar -->
-    <form 
-        id="search-form" 
-        action="#"
-        method="post"
-        class="relative flex items-center w-full max-w-4xl px-4"
-    >
-        <input 
-            id="query-input"
-            type="text" 
-            name="query" 
-            placeholder="Ask me anything..." 
-            class="w-full bg-black border border-gray-700 text-white px-6 py-4 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500 transition"
-            required
-        />
-        <button 
-            type="submit"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-300 transition"
-        >
-            <!-- Search Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="5 1 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10l2-2m0 00-0-2m2 2l2-2m-2 2l2 2m10 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        </button>
+
+    <form id="search-form" action="#" method="post" class="relative flex items-center px-4">
+        <div id="poda">
+            <div class="glow"></div>
+            <div class="darkBorderBg"></div>
+            <div class="darkBorderBg"></div>
+            <div class="darkBorderBg"></div>
+            <div class="white"></div>
+            <div class="border"></div>
+
+            <div id="main">
+                <input id= 'query-input' autocomplete="off" placeholder="Ask me anything..." type="text" name="query" class="input" required/>
+                <div id="input-mask"></div>
+                <div id="pink-mask"></div>
+                <div class="filterBorder"></div>
+                <div id="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" height="24" fill="none" class="feather feather-search">
+                        <circle stroke="url(#search)" r="8" cy="11" cx="11"></circle>
+                        <line stroke="url(#searchl)" y2="16.65" y1="22" x2="16.65" x1="22"></line>
+                        <defs>
+                            <linearGradient gradientTransform="rotate(50)" id="search">
+                                <stop stop-color="#f8e7f8" offset="0%"></stop>
+                                <stop stop-color="#b6a9b7" offset="50%"></stop>
+                            </linearGradient>
+                            <linearGradient id="searchl">
+                                <stop stop-color="#b6a9b7" offset="0%"></stop>
+                                <stop stop-color="#837484" offset="50%"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </form>
 </section>
 
-<!-- Results Section -->
 <section id="results-section" class="hidden py-12">
     <div class="max-w-4xl mx-auto px-6">
-        
         <div id="response" class="text-white text-lg font-medium mb-6">
-
-        <div id="sources" class="space-y-4"></div>
+            <div id="sources" class="space-y-4"></div>
+        </div>
     </div>
 </section>
-<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 {% endblock %}
