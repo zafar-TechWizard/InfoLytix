@@ -1,0 +1,47 @@
+{% extends "chat.html" %}
+
+{% block content %}
+<div id="chat-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+    <div id="chat-messages" class="space-y-4">
+        {% if history and history.status %}
+            {% for message in history.messages %}
+                <div class="message user-message">
+                    <div class="message-content">
+                        {{ message.user }}
+                    </div>
+                </div>
+                {% if message.bot %}
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            {{ message.bot }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        
+        {% if query %}
+            <div class="message user-message">
+                <div class="message-content">
+                    {{ query }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block chat_form %}
+<form id="chat-form" class="max-w-3xl mx-auto">
+    <div class="input-container">
+        <input id="chat-input" type="text" class="" placeholder="Ask anything..." required />
+        <button id="send-btn" type="submit" class="">
+            Send
+        </button>
+    </div>
+</form>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

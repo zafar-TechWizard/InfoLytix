@@ -1,13 +1,14 @@
 from groq import Groq
-# from chain.prompt import webPrompt
 from chain.prompt import webPrompt
+# from prompt import webPrompt
 
 
 
 
 
 
-client = Groq(api_key='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',)
+# client = Groq(api_key='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',)
+client = Groq(api_key='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')
 
 
 
@@ -53,3 +54,6 @@ def Questionafy(query):
 
     return response
 
+
+# if __name__ == '__main__':
+#     print(Questionafy("What is known as RL in ai and ml?"))

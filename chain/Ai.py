@@ -3,7 +3,8 @@ from groq import Groq
 from chain.prompt import responsePrompt
 
 
-client = Groq(api_key='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',)
+# client = Groq(api_key='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',)
+client = Groq(api_key='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')
 
 
 
@@ -34,3 +35,9 @@ def Summarize(question, context):
     # convo_history.append({'role': 'assistant', 'content': response})
 
     return response
+
+def get_title(user):
+    
+    #make it to generate title for user query
+    
+    return user

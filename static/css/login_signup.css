@@ -1,0 +1,114 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #121212; /* Dark mode background */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 350px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+    border: 2px solid #007bff;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Flash Messages */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.flash.success { background: #28a745; color: #ffffff; }
+.flash.warning { background: #ffc107; color: #000000; }
+.flash.danger { background: #dc3545; color: #ffffff; }
+.flash.info { background: #17a2b8; color: #ffffff; }
+
+/* Links */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
